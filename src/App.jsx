@@ -90,7 +90,7 @@ function App() {
       </section>
 
       {/* Special Offer Banner */}
-      <section className="py-4" style={{ backgroundColor: '#FF6B35' }}>
+      <section className="py-4" style={{ backgroundColor: '#006B7D' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <p className="text-lg md:text-xl font-semibold">
             🎉 Special Offer: Save 15% on Extended Stays for Project Workers
