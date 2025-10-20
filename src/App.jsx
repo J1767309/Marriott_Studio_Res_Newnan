@@ -532,12 +532,15 @@ function App() {
             <p className="text-gray-600 mb-6">
               Special discount for project workers staying 2 weeks or more
             </p>
-            <button 
-              className="w-full md:w-auto px-12 py-4 rounded-lg font-bold text-lg text-white transition-all hover:scale-105 shadow-lg"
+            <a
+              href="https://www.marriott.com/en-us/hotels/atlni-studiores-newnan/overview/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block w-full md:w-auto px-12 py-4 rounded-lg font-bold text-lg text-white transition-all hover:scale-105 shadow-lg"
               style={{ backgroundColor: '#006B7D' }}
             >
-              Book Now - Add Your Booking Link Here
-            </button>
+              Book Now
+            </a>
           </div>
 
           <div id="contact" className="grid md:grid-cols-2 gap-6 mt-12">
