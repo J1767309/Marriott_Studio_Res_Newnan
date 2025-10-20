@@ -1,4 +1,5 @@
 import './App.css'
+import { useState } from 'react'
 import { Phone, Mail, MapPin, ChefHat, ParkingCircle, Dumbbell, Zap, Wifi, Shirt, DoorOpen, Award, Check, Smartphone } from 'lucide-react'
 import heroImage from './assets/ATLNI-Twilight-1.jpg'
 import exteriorImage from './assets/ATLNI-Exterior-1.jpg'
@@ -14,6 +15,22 @@ import techProfessional from './assets/tech-professional.jpg'
 import corporateTrainer from './assets/corporate-trainer.jpg'
 
 function App() {
+  const [stayDays, setStayDays] = useState(30)
+
+  // Calculate savings based on number of days
+  const calculateSavings = (days) => {
+    const months = days / 30
+    const dailySavings = 750 / 30 // $750 per month = $25 per day
+    return {
+      totalSavings: Math.round(dailySavings * days),
+      withoutKitchen: Math.round((1500 / 30) * days),
+      withKitchen: Math.round((750 / 30) * days),
+      monthlySavings: 750
+    }
+  }
+
+  const savings = calculateSavings(stayDays)
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -192,20 +209,57 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Your Kitchen = Real Savings</h2>
+
+            {/* Interactive Calculator */}
+            <div className="mb-12 max-w-2xl mx-auto">
+              <div className="bg-white/10 backdrop-blur p-8 rounded-xl border-2 border-white/30">
+                <h3 className="text-2xl font-bold mb-4">Calculate Your Savings</h3>
+                <label className="block text-lg mb-3">How many days will you stay?</label>
+                <div className="flex items-center justify-center gap-4">
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="number"
+                      min="1"
+                      value={stayDays}
+                      onChange={(e) => setStayDays(Math.max(1, parseInt(e.target.value) || 1))}
+                      className="w-32 h-16 px-4 py-3 text-3xl font-bold text-white bg-white/20 border-2 border-white/40 rounded-lg text-center focus:outline-none focus:ring-4 focus:ring-white/50 focus:bg-white/30"
+                    />
+                    <div className="flex flex-col gap-1">
+                      <button
+                        onClick={() => setStayDays(prev => prev + 1)}
+                        className="w-12 h-7 bg-white/30 hover:bg-white/50 border-2 border-white/60 rounded-md flex items-center justify-center text-white font-bold text-xl transition-all hover:scale-105"
+                      >
+                        ▲
+                      </button>
+                      <button
+                        onClick={() => setStayDays(prev => Math.max(1, prev - 1))}
+                        className="w-12 h-7 bg-white/30 hover:bg-white/50 border-2 border-white/60 rounded-md flex items-center justify-center text-white font-bold text-xl transition-all hover:scale-105"
+                      >
+                        ▼
+                      </button>
+                    </div>
+                  </div>
+                  <span className="text-xl font-semibold">days</span>
+                </div>
+                <div className="mt-6 pt-6 border-t-2 border-white/30">
+                  <div className="text-yellow-300 text-lg mb-2">Your Total Savings</div>
+                  <div className="text-6xl font-bold mb-2">${savings.totalSavings.toLocaleString()}</div>
+                  <div className="text-xl opacity-90">over {stayDays} days ({(stayDays/30).toFixed(1)} months)</div>
+                </div>
+              </div>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="bg-white/10 backdrop-blur p-8 rounded-xl">
                 <div className="text-red-300 text-lg font-semibold mb-2">Without Kitchen (All Eating Out)</div>
-                <div className="text-5xl font-bold mb-2">$1,500</div>
-                <div className="text-xl">per month on meals</div>
+                <div className="text-5xl font-bold mb-2">${savings.withoutKitchen.toLocaleString()}</div>
+                <div className="text-xl">for {stayDays} days</div>
               </div>
               <div className="bg-white/10 backdrop-blur p-8 rounded-xl border-4 border-white">
                 <div className="text-green-300 text-lg font-semibold mb-2">With Kitchen (Cook at Home)</div>
-                <div className="text-5xl font-bold mb-2">$750</div>
-                <div className="text-xl">per month total</div>
+                <div className="text-5xl font-bold mb-2">${savings.withKitchen.toLocaleString()}</div>
+                <div className="text-xl">for {stayDays} days</div>
               </div>
-            </div>
-            <div className="mt-8 text-3xl font-bold">
-              = $750 SAVED Every Month!
             </div>
             
             <div className="mt-12 max-w-3xl mx-auto bg-white/10 backdrop-blur p-8 rounded-xl">
