@@ -13,6 +13,7 @@ import patio from './assets/ATLNI-Patio-1.jpg'
 import constructionWorker from './assets/construction-worker.jpg'
 import techProfessional from './assets/tech-professional.jpg'
 import corporateTrainer from './assets/corporate-trainer.jpg'
+import marriottBonvoyLogo from './assets/Marriott-Bonvoy-Logo.png'
 
 function App() {
   const [stayDays, setStayDays] = useState(30)
@@ -35,23 +36,33 @@ function App() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="text-2xl font-bold" style={{ color: '#006B7D' }}>STUDIORES</div>
-            <div className="text-sm text-gray-600">by Marriott</div>
-          </div>
-          <div className="flex items-center gap-6">
-            <a href="tel:+14706866730" className="hidden sm:flex items-center gap-2 text-gray-700 hover:text-[#006B7D] transition-colors">
-              <Phone className="w-4 h-4" />
-              <span>(470) 686-6730</span>
-            </a>
-            <button 
-              onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-6 py-2 rounded-lg font-semibold text-white transition-all hover:scale-105"
-              style={{ backgroundColor: '#006B7D' }}
-            >
-              Book Now
-            </button>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center gap-4">
+              <div className="flex flex-col items-start">
+                <div className="text-2xl font-bold" style={{ color: '#006B7D' }}>STUDIORES</div>
+                <div className="text-xs text-gray-500">Extended Stay Hotel</div>
+              </div>
+              <div className="h-12 w-px bg-gray-300 hidden sm:block"></div>
+              <img
+                src={marriottBonvoyLogo}
+                alt="Marriott Bonvoy"
+                className="h-10 w-auto hidden sm:block"
+              />
+            </div>
+            <div className="flex items-center gap-6">
+              <a href="tel:+14706866730" className="hidden sm:flex items-center gap-2 text-gray-700 hover:text-[#006B7D] transition-colors">
+                <Phone className="w-4 h-4" />
+                <span>(470) 686-6730</span>
+              </a>
+              <button
+                onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-6 py-2 rounded-lg font-semibold text-white transition-all hover:scale-105"
+                style={{ backgroundColor: '#006B7D' }}
+              >
+                Book Now
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -71,14 +82,14 @@ function App() {
               Extended-stay comfort designed for workers at major employers and data center projects
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
+              <button
                 onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-8 py-4 rounded-lg font-bold text-lg text-white transition-all hover:scale-105 shadow-lg"
                 style={{ backgroundColor: '#006B7D' }}
               >
                 Book Your Extended Stay
               </button>
-              <button 
+              <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-8 py-4 bg-white text-gray-900 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all shadow-lg"
               >
@@ -111,7 +122,7 @@ function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#006B7D' }}>
                 <ChefHat className="w-8 h-8 text-white" />
@@ -142,6 +153,16 @@ function App() {
               <h3 className="text-2xl font-bold mb-4">Long-Term Ready</h3>
               <p className="text-gray-600 text-lg">
                 On-site laundry, free parking, 24/7 access, and pet-friendly. Everything you need for stays of weeks and months, not just nights.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 border-2 border-gray-200">
+                <img src={marriottBonvoyLogo} alt="Marriott Bonvoy" className="h-12 w-auto p-2" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Earn Rewards</h3>
+              <p className="text-gray-600 text-lg">
+                Stay with us for work, earn Marriott Bonvoy points, then use them for your dream vacation. Turn business trips into beach getaways!
               </p>
             </div>
           </div>
@@ -515,6 +536,81 @@ function App() {
         </div>
       </section>
 
+      {/* Business Access Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#006B7D' }}>
+              Business Access by Marriott Bonvoy™
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-4">
+              A comprehensive online travel program that combines an expanded booking experience with the benefits and rewards that are only available through Marriott Bonvoy®'s award-winning travel program.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
+            <div className="rounded-xl overflow-hidden shadow-xl">
+              <div className="relative" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/dI1GD2XNqRQ"
+                  title="Business Access by Marriott Bonvoy Demo Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-3xl font-bold mb-6" style={{ color: '#006B7D' }}>
+                Perfect for Small to Medium-Sized Businesses
+              </h3>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-4">
+                  <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-bold text-lg">Discounted Hotel Rates</div>
+                    <div className="text-gray-600">Book Marriott Bonvoy hotels at special business rates</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-bold text-lg">Complete Travel Solutions</div>
+                    <div className="text-gray-600">Book flights, rail, and rental cars in one easy-to-use platform</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-bold text-lg">Expense Management</div>
+                    <div className="text-gray-600">Access live travel data and streamline business expenses</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-bold text-lg">Earn Marriott Bonvoy Points</div>
+                    <div className="text-gray-600">Rewards on all your business travel bookings</div>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="https://mgscloud.marriott.com/mgs/marrdocs/mgs/common/salesmktgrevmgmt/toolsresources/businessaccess/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-4 rounded-lg font-bold text-lg text-white transition-all hover:scale-105 shadow-lg"
+                style={{ backgroundColor: '#006B7D' }}
+              >
+                Sign Up for Business Access
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Booking Section */}
       <section id="booking" className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -530,7 +626,7 @@ function App() {
               15% Off Extended Stays
             </div>
             <p className="text-gray-600 mb-6">
-              Special discount for project workers staying 2 weeks or more
+              Special discount for project workers staying 7 days or more
             </p>
             <a
               href="https://www.marriott.com/en-us/hotels/atlni-studiores-newnan/overview/"
@@ -563,8 +659,8 @@ function App() {
               <p className="text-gray-600 mb-4">
                 Our team is here to help with your extended-stay needs and special requests.
               </p>
-              <a 
-                href="mailto:info@studiores-newnan.com"
+              <a
+                href="mailto:sales@hotelmc.net"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
               >
                 <Mail className="w-5 h-5" />
