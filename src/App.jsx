@@ -82,13 +82,15 @@ function App() {
               Extended-stay comfort designed for workers at major employers and data center projects
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 rounded-lg font-bold text-lg text-white transition-all hover:scale-105 shadow-lg"
+              <a
+                href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1761245906298&key=CORP&dtt=true&app=resvlink"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-lg font-bold text-lg text-white transition-all hover:scale-105 shadow-lg text-center"
                 style={{ backgroundColor: '#006B7D' }}
               >
                 Book Your Extended Stay
-              </button>
+              </a>
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-8 py-4 bg-white text-gray-900 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all shadow-lg"
