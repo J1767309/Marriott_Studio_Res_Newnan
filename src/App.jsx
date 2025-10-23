@@ -629,7 +629,7 @@ function App() {
               Special discount for project workers staying 7 days or more
             </p>
             <a
-              href="https://www.marriott.com/en-us/hotels/atlni-studiores-newnan/overview/"
+              href="https://www.marriott.com/reservation/rateListMenu.mi?marshaCode=ATLNI&projectDates=false"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block w-full md:w-auto px-12 py-4 rounded-lg font-bold text-lg text-white transition-all hover:scale-105 shadow-lg"
@@ -751,8 +751,8 @@ function App() {
               <h3 className="font-bold text-lg mb-4">Quick Links</h3>
               <div className="space-y-2">
                 <a href="#booking" className="block text-gray-400 hover:text-white transition-colors">Book Now</a>
-                <a href="https://www.marriott.com/en-us/hotels/atlni-studiores-newnan/overview/" target="_blank" rel="noopener noreferrer" className="block text-gray-400 hover:text-white transition-colors">
-                  Official Marriott Page
+                <a href="https://www.marriott.com/reservation/rateListMenu.mi?marshaCode=ATLNI&projectDates=false" target="_blank" rel="noopener noreferrer" className="block text-gray-400 hover:text-white transition-colors">
+                  Book on Marriott.com
                 </a>
                 <a href="https://www.marriott.com/loyalty.mi" target="_blank" rel="noopener noreferrer" className="block text-gray-400 hover:text-white transition-colors">
                   Marriott Bonvoy
