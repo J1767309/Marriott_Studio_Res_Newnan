@@ -14,6 +14,7 @@ import constructionWorker from './assets/construction-worker.jpg'
 import techProfessional from './assets/tech-professional.jpg'
 import corporateTrainer from './assets/corporate-trainer.jpg'
 import marriottBonvoyLogo from './assets/Marriott-Bonvoy-Logo.png'
+import studioResLogo from './assets/StudioRes-logo.jpg'
 
 function App() {
   const [stayDays, setStayDays] = useState(30)
@@ -40,8 +41,12 @@ function App() {
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4">
               <div className="flex flex-col items-start">
-                <div className="text-2xl font-bold" style={{ color: '#006B7D' }}>STUDIORES</div>
-                <div className="text-xs text-gray-500">Extended Stay Hotel</div>
+                <img
+                  src={studioResLogo}
+                  alt="StudioRes"
+                  className="h-10 w-auto"
+                />
+                <div className="text-xs text-gray-500 mt-1">by Marriott</div>
               </div>
               <div className="h-12 w-px bg-gray-300 hidden sm:block"></div>
               <img
